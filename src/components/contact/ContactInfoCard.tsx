@@ -65,7 +65,7 @@ export default function ContactInfoCard() {
         Contact Information
       </Typography>
       <Typography sx={{ color: 'rgba(255,255,255,.75)', fontSize: 14.5 }}>
-        Reach us any way that&apos;s convenient — WhatsApp is usually the fastest.
+        Reach us any way that&apos;s convenient. WhatsApp is usually the fastest.
       </Typography>
 
       <Box sx={{ mt: 3.5, display: 'flex', flexDirection: 'column', gap: 2.5 }}>

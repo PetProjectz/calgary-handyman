@@ -106,7 +106,7 @@ export default function NavBar() {
         <Box
           component={NextLink}
           href="/"
-          aria-label="Calgary Handyman — home"
+          aria-label="Calgary Handyman home"
           sx={{ display: 'flex', alignItems: 'center', flexShrink: 0 }}
         >
           <Image

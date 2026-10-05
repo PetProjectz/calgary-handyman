@@ -103,7 +103,7 @@ export default function HomeHero() {
           </Typography>
           <Typography sx={{ fontSize: 17, maxWidth: 480, mb: 3.75, color: 'rgba(255,255,255,.82)' }}>
             From small repairs to major improvements, we get the job done right. Plumbing, painting,
-            flooring, drywall, ceilings, electrical, glass &amp; carpentry — one call covers it all.
+            flooring, drywall, ceilings, electrical, glass &amp; carpentry. One call covers it all.
           </Typography>
           <Box sx={{ display: 'flex', gap: 1.75, flexWrap: 'wrap' }}>
             <AppButton href="/#services" variant="contained" endIcon={<ArrowForwardRoundedIcon />}>

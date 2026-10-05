@@ -72,7 +72,7 @@ export default function WhyChooseUs() {
             />
             <Typography sx={{ color: 'text.secondary' }}>
               We&apos;re a locally owned Calgary crew that shows up on time, communicates clearly,
-              and treats your home like our own. No subcontractor shuffle — just skilled hands and
+              and treats your home like our own. No subcontractor shuffle, just skilled hands and
               honest pricing.
             </Typography>
 

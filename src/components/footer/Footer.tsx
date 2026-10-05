@@ -118,7 +118,7 @@ export default function Footer() {
           <Box>
             <AppLink
               href="/"
-              aria-label="Calgary Handyman — home"
+              aria-label="Calgary Handyman home"
               sx={{ display: 'inline-flex', alignItems: 'center' }}
             >
               <Image

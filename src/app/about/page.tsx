@@ -72,7 +72,7 @@ const steps = [
   {
     Icon: ReceiptLongRoundedIcon,
     title: '2. Get a Clear Quote',
-    text: 'We review the details and send you honest, upfront pricing — no hidden fees.',
+    text: 'We review the details and send you honest, upfront pricing with no hidden fees.',
   },
   {
     Icon: HandymanRoundedIcon,
