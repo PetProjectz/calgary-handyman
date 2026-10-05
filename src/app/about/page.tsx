@@ -13,18 +13,30 @@ import ReceiptLongRoundedIcon from '@mui/icons-material/ReceiptLongRounded';
 import TrackChangesRoundedIcon from '@mui/icons-material/TrackChangesRounded';
 
 import CtaSection from '@/components/common/CtaSection';
+import JsonLd from '@/components/common/JsonLd';
 import PageHero from '@/components/common/PageHero';
 import Pillar from '@/components/common/Pillar';
 import ScrollReveal from '@/components/common/ScrollReveal';
 import SectionHeading from '@/components/common/SectionHeading';
 import { displayFontFamily } from '@/fonts';
+import { absoluteUrl } from '@/seo';
+import { breadcrumbSchema, businessId, graph } from '@/structuredData';
 
 export const metadata: Metadata = {
   title: 'About Us',
   description:
     'Calgary Handyman is a locally owned home repair and improvement service built on fair pricing, careful craftsmanship and honest communication.',
   alternates: { canonical: '/about' },
+  openGraph: {
+    type: 'website',
+    url: '/about',
+    title: 'About Us | Calgary Handyman',
+    description:
+      'Calgary Handyman is a locally owned home repair and improvement service built on fair pricing, careful craftsmanship and honest communication.',
+  },
 };
+
+const breadcrumbs = [{ name: 'About Us', path: '/about' }];
 
 const pillars = [
   {
@@ -78,12 +90,24 @@ const pillarGridSx = {
 export default function AboutPage() {
   return (
     <>
+      <JsonLd
+        data={graph(
+          {
+            '@type': 'AboutPage',
+            name: 'About Calgary Handyman',
+            url: absoluteUrl('/about'),
+            about: { '@id': businessId },
+          },
+          breadcrumbSchema([{ name: 'Home', path: '/' }, ...breadcrumbs]),
+        )}
+      />
+
       <PageHero
         tag="About Calgary Handyman"
         title="Local expertise, honest work, lasting relationships"
         subtitle="We're a Calgary owned handyman company built on fair pricing, careful craftsmanship, and treating every home like our own."
         image="/assets/hero/hero-about.webp"
-        breadcrumb="About Us"
+        breadcrumbs={breadcrumbs}
       />
 
       <Box component="section" sx={{ py: { xs: 7, md: 10.5 } }}>

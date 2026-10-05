@@ -1,4 +1,6 @@
 import * as React from 'react';
+import Image from 'next/image';
+
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
@@ -35,6 +37,10 @@ const badges = [
  * The taller, content-forward home hero (`.site-hero.hero-home`): background
  * photo under the green scrim, headline copy, two CTAs and a trust-badge bar
  * pinned to the bottom.
+ *
+ * The photo is a `priority` `next/image` rather than a CSS `background-image`:
+ * it is the home page's LCP element, and as CSS the browser could not discover
+ * it until the stylesheet parsed, nor serve it as AVIF at the right size.
  */
 export default function HomeHero() {
   return (
@@ -45,25 +51,38 @@ export default function HomeHero() {
         overflow: 'hidden',
         color: '#fff',
         bgcolor: 'brandSurface.deep',
-        backgroundImage: "url('/assets/hero/hero-home.webp')",
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
         display: 'flex',
         flexDirection: 'column',
         minHeight: { xs: 0, md: 640 },
         pt: { xs: '110px', md: '130px' },
         pb: { xs: 7, md: 5.5 },
-        '&::before': {
-          content: '""',
-          position: 'absolute',
-          inset: 0,
-          background: 'var(--mui-palette-brandSurface-heroScrim)',
-        },
       }}
     >
+      <Box sx={{ position: 'absolute', inset: 0, zIndex: 0 }}>
+        <Image
+          src="/assets/hero/hero-home.webp"
+          alt=""
+          aria-hidden
+          fill
+          priority
+          sizes="100vw"
+          style={{ objectFit: 'cover' }}
+        />
+      </Box>
+      <Box
+        aria-hidden
+        sx={{
+          position: 'absolute',
+          inset: 0,
+          zIndex: 1,
+          background: 'var(--mui-palette-brandSurface-heroScrim)',
+        }}
+      />
+
       <Container
         sx={{
           position: 'relative',
+          zIndex: 2,
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'space-between',

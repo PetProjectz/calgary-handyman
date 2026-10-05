@@ -98,7 +98,11 @@ export default function WhyChooseUs() {
                     <value.Icon sx={{ fontSize: 18 }} />
                   </Box>
                   <Box>
-                    <Typography variant="h4" sx={{ fontSize: 15, color: 'brandSurface.heading', mb: 0.5 }}>
+                    <Typography
+                      variant="h4"
+                      component="h3"
+                      sx={{ fontSize: 15, color: 'brandSurface.heading', mb: 0.5 }}
+                    >
                       {value.title}
                     </Typography>
                     <Typography sx={{ fontSize: 13.5, color: 'text.secondary' }}>
