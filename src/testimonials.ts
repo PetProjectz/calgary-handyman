@@ -13,7 +13,7 @@ export interface Testimonial {
 export const testimonials: Testimonial[] = [
   {
     quote:
-      'Fast, tidy and genuinely skilled — they patched our drywall and repainted the whole hallway in a single afternoon.',
+      'Fast, tidy and genuinely skilled. They patched our drywall and repainted the whole hallway in a single afternoon.',
     name: 'Jordan R.',
     initials: 'JR',
     location: 'Signal Hill, Calgary',

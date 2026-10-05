@@ -46,7 +46,7 @@ export default function ContactPage() {
       <PageHero
         tag="We'd Love to Help"
         title="Get in Touch"
-        subtitle="Have a question or need a handyman? Call, WhatsApp, or send us your project details below — we're here to help."
+        subtitle="Have a question or need a handyman? Call, WhatsApp, or send us your project details below. We're here to help."
         image="/assets/hero/hero-contact.webp"
         breadcrumbs={breadcrumbs}
       />

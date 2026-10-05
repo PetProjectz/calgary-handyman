@@ -46,7 +46,7 @@ export default function HomePage() {
       <CtaSection
         py={{ xs: 7, md: 10.5 }}
         title="Ready to fix it, finish it, or install it?"
-        text="Tell us about your project and we'll get back to you with a free, no-obligation estimate — often the same day."
+        text="Tell us about your project and we'll get back to you with a free, no-obligation estimate, often the same day."
         image="/assets/home/final-cta.webp"
         imageAlt="Calgary skyline"
         actions={

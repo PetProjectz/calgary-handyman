@@ -39,7 +39,7 @@ export const localBusinessSchema: Json = {
   },
   image: absoluteUrl('/assets/brand/calgary-handyman-og.png'),
   description:
-    'Locally owned handyman services in Calgary, Alberta — plumbing, painting, flooring, drywall, ceiling repair, electrical, glass and carpentry.',
+    'Locally owned handyman services in Calgary, Alberta: plumbing, painting, flooring, drywall, ceiling repair, electrical, glass and carpentry.',
   telephone: contactInfo.phoneE164,
   email: contactInfo.email,
   address: {

@@ -99,7 +99,7 @@ export default function EstimateForm() {
       </Typography>
 
       <Box component="form" action={FORM_ACTION} method="POST" encType="multipart/form-data">
-        <input type="hidden" name="_subject" value="New Online Estimate Request — Calgary Handyman" />
+        <input type="hidden" name="_subject" value="New Online Estimate Request for Calgary Handyman" />
         <input type="hidden" name="_captcha" value="false" />
         <input type="hidden" name="_template" value="table" />
 
@@ -210,7 +210,7 @@ export default function EstimateForm() {
               Click to upload or drag &amp; drop
             </Box>
             <Box component="span" sx={{ fontSize: 12.5, color: 'text.secondary' }}>
-              JPG, PNG or PDF — up to 6 files, 10MB each
+              JPG, PNG or PDF, up to 6 files, 10MB each
             </Box>
             <Box
               component="input"
