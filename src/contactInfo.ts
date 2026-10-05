@@ -7,7 +7,9 @@ export const contactInfo = {
   phoneDisplay: '(403) 616-2133',
   phoneE164: '+14036162133',
   phoneHref: 'tel:+14036162133',
-  whatsappNumber: '14036162133',
+  /** WhatsApp is a separate line from the call number above. */
+  whatsappDisplay: '(403) 714-5593',
+  whatsappNumber: '14037145593',
   email: 'info@calgaryhandyman.ca',
   emailHref: 'mailto:info@calgaryhandyman.ca',
   location: 'Calgary, Alberta, Canada',
