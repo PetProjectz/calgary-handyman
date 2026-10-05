@@ -11,6 +11,8 @@ interface SectionHeadingProps {
   align?: 'left' | 'center';
   /** Show the short red divider bar above the eyebrow (used on split sections). */
   divider?: boolean;
+  /** Heading element, for the rare nested section. Styling stays `h2`. */
+  headingComponent?: 'h2' | 'h3';
 }
 
 /**
@@ -22,6 +24,7 @@ export default function SectionHeading({
   title,
   align = 'center',
   divider = false,
+  headingComponent = 'h2',
 }: SectionHeadingProps) {
   const isCenter = align === 'center';
 
@@ -42,6 +45,7 @@ export default function SectionHeading({
       <Eyebrow align={align}>{tag}</Eyebrow>
       <Typography
         variant="h2"
+        component={headingComponent}
         sx={{
           fontSize: 'clamp(28px, 3.4vw, 40px)',
           color: 'brandSurface.heading',

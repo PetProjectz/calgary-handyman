@@ -20,9 +20,17 @@ import { displayFontFamily } from '@/fonts';
 import { estimateHref, navLinks } from '@/navLinks';
 import { services } from '@/services';
 
-/** Logo intrinsic size is 1200×315, rendered at a 40px cap in the header. */
+/**
+ * The logo's true intrinsic size. Passing the real dimensions rather than a
+ * rounded display size keeps next/image's aspect-ratio check satisfied: a
+ * rounded width (152 for a 40px cap) implies 3.800, while the real ratio is
+ * 3.810, and that mismatch is what triggered the console warning. CSS caps the
+ * height and derives the width.
+ */
+const LOGO_INTRINSIC_WIDTH = 1200;
+const LOGO_INTRINSIC_HEIGHT = 315;
+/** Rendered cap in the header. */
 const LOGO_HEIGHT = 40;
-const LOGO_WIDTH = Math.round((LOGO_HEIGHT * 1200) / 315);
 
 /** Breakpoint the static site switched to the slide-in mobile nav at. */
 const MOBILE_QUERY = '@media (max-width: 960px)';
@@ -104,8 +112,8 @@ export default function NavBar() {
           <Image
             src="/assets/brand/calgary-handyman-logo.webp"
             alt="Calgary Handyman logo"
-            width={LOGO_WIDTH}
-            height={LOGO_HEIGHT}
+            width={LOGO_INTRINSIC_WIDTH}
+            height={LOGO_INTRINSIC_HEIGHT}
             priority
             style={{ height: LOGO_HEIGHT, width: 'auto', display: 'block' }}
           />

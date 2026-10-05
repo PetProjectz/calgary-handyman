@@ -12,8 +12,6 @@ import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 
 import { contactInfo, whatsappLink } from '@/contactInfo';
 
-const quoteMessage = "Hi Calgary Handyman! I have a project I'd like a quote on.";
-
 const valueSx = { fontSize: 13.5, color: 'rgba(255,255,255,.78)' };
 const linkSx = {
   ...valueSx,
@@ -79,7 +77,7 @@ export default function ContactInfoCard() {
         <Method icon={<WhatsAppIcon sx={{ fontSize: 18 }} />} label="WhatsApp" whatsapp>
           <Box
             component="a"
-            href={whatsappLink(quoteMessage)}
+            href={whatsappLink()}
             target="_blank"
             rel="noopener noreferrer"
             sx={linkSx}
@@ -124,7 +122,7 @@ export default function ContactInfoCard() {
 
       <Button
         component="a"
-        href={whatsappLink(quoteMessage)}
+        href={whatsappLink()}
         target="_blank"
         rel="noopener noreferrer"
         fullWidth

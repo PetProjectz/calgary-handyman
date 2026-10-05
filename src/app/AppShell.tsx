@@ -31,7 +31,7 @@ function AppShell({ children }: { children: React.ReactNode }) {
       <Footer />
       <Fab
         aria-label="Chat on WhatsApp"
-        href={whatsappLink("Hi Calgary Handyman! I'd like to get in touch.")}
+        href={whatsappLink()}
         target="_blank"
         rel="noopener noreferrer"
         sx={{

@@ -1,9 +1,12 @@
 import * as React from 'react';
+import type { Metadata } from 'next';
+
 import Button from '@mui/material/Button';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 
 import AppButton from '@/components/common/AppButton';
 import CtaSection from '@/components/common/CtaSection';
+import JsonLd from '@/components/common/JsonLd';
 import BannerStrip from '@/components/home/BannerStrip';
 import HomeHero from '@/components/home/HomeHero';
 import ServicesGrid from '@/components/home/ServicesGrid';
@@ -11,10 +14,30 @@ import Testimonials from '@/components/home/Testimonials';
 import WhyChooseUs from '@/components/home/WhyChooseUs';
 import { whatsappLink } from '@/contactInfo';
 import { estimateHref } from '@/navLinks';
+import { siteUrl } from '@/seo';
+import { businessId, graph, websiteId } from '@/structuredData';
+
+// Set here rather than inherited from the layout, so that no other page can
+// accidentally pick up the home page's canonical.
+export const metadata: Metadata = {
+  alternates: { canonical: '/' },
+};
 
 export default function HomePage() {
   return (
     <>
+      <JsonLd
+        data={graph({
+          '@type': 'WebPage',
+          '@id': `${siteUrl}/#webpage`,
+          url: siteUrl,
+          name: 'Calgary Handyman | Reliable Handyman Services in Calgary, AB',
+          isPartOf: { '@id': websiteId },
+          about: { '@id': businessId },
+          inLanguage: 'en-CA',
+        })}
+      />
+
       <HomeHero />
       <ServicesGrid />
       <BannerStrip />
@@ -33,7 +56,7 @@ export default function HomePage() {
             </AppButton>
             <Button
               component="a"
-              href={whatsappLink("Hi Calgary Handyman! I'd like to ask about a project.")}
+              href={whatsappLink()}
               target="_blank"
               rel="noopener noreferrer"
               variant="outlined"
